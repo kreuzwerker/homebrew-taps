@@ -2,7 +2,7 @@
 
 This repository contains homebrew taps for the kreuzwerker organization.
 
-## Install
+## Usage
 
 `brew tap kreuzwerker/taps`
 
