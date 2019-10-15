@@ -3,9 +3,9 @@ class Awsu < Formula
   desc "Amazon Web Services Switch User (awsu)"
   homepage "https://github.com/kreuzwerker/awsu"
 
-  version "2.3.0RC1"
-  url "https://github.com/kreuzwerker/awsu/releases/download/2.3.0RC1/awsu-darwin-amd64"
-  sha256 "685a2843e4116ef721eee940f9df989c88ff4918cad384c591c9c801765e7507"
+  version "2.3.2"
+  url "https://github.com/kreuzwerker/awsu/releases/download/2.3.2/awsu-darwin-amd64"
+  sha256 "f75ba543cf193614c7455e02b8780960e22e9e0140b7f37583279bb9d9a0030a"
 
   bottle :unneeded
 
