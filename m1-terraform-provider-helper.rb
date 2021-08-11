@@ -5,14 +5,18 @@
 class M1TerraformProviderHelper < Formula
   desc "CLI to support with downloading and compiling terraform providers for Mac with M1 chip."
   homepage "https://github.com/kreuzwerker/m1-terraform-provider-helper"
-  version "0.2.0"
+  version "0.2.1"
   bottle :unneeded
   depends_on :macos
 
   on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.2.1/m1-terraform-provider-helper_0.2.1_Darwin_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "4887d307fe8b0bae3dcd18bb9ad0d97f726cb4d3ab4ead07fe6d3ccad4c4af63"
+    end
     if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.2.0/m1-terraform-provider-helper_0.2.0_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "5685aa95e9224a56470036a2509f8b6584355125a7e35b878c62b9f118e35e3e"
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.2.1/m1-terraform-provider-helper_0.2.1_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "837a028514fa10fa3cfb596fb880504931b8290cb60b1c0a356c219cb7dc3762"
     end
   end
 
