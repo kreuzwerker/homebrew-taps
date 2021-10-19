@@ -16,6 +16,13 @@ class Awsu < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.3/awsu_2.3.3_Linux_x86_64.tar.gz"
+      sha256 "e8cfec1e9bc05a81fe9f15dee15f0b51af97da60c79340bcb1574cee84b63753"
+    end
+  end
+
   def install
     bin.install "awsu"
   end
