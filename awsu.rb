@@ -10,6 +10,9 @@ class Awsu < Formula
   depends_on :macos
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://there-is-no-release-yet-but-to-make-brew-not-fail-on-the-tap.com"
+    end
     if Hardware::CPU.intel?
       url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.3/awsu_2.3.3_Darwin_x86_64.tar.gz"
       sha256 "111c9c6934d4f745a82cf2ed04596487158df8648b28d0089aa99b815177668a"
