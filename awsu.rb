@@ -6,7 +6,6 @@ class Awsu < Formula
   desc "It provides a convenient integration of AWS virtual MFA devices into commandline based workflows."
   homepage "https://github.com/kreuzwerker/awsu"
   version "2.3.3"
-  bottle :unneeded
   depends_on :macos
 
   on_macos do
