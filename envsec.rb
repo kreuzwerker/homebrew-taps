@@ -5,32 +5,43 @@
 class Envsec < Formula
   desc "Encrypted environment variables via AWS KMS."
   homepage "https://github.com/kreuzwerker/envsec"
-  version "1.2.0"
-  bottle :unneeded
+  version "1.2.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.0/envsec_1.2.0_Darwin_arm64.tar.gz"
-      sha256 "4654bea39fed2f3b6552a9658415279976a080e129c3de80a0f84411ca0c7750"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.0/envsec_1.2.0_Darwin_x86_64.tar.gz"
-      sha256 "7e726811db9ba3db23594b06a592482687d1a38596cf36e505a818ebf8695b18"
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Darwin_x86_64.tar.gz"
+      sha256 "f94b942920338ff9d504a84fdd842393115e6a8b802c37c97784bbeac9951359"
+
+      def install
+        bin.install "envsec"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Darwin_arm64.tar.gz"
+      sha256 "be1397d0db3e2c32162526738b54ad537cb8d4401df45ee52df514b89ba11901"
+
+      def install
+        bin.install "envsec"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.0/envsec_1.2.0_Linux_x86_64.tar.gz"
-      sha256 "d1c72cfd110994fbbe4047eedcdab04af34ab71aaeba0d30d9405ab98ecae463"
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Linux_x86_64.tar.gz"
+      sha256 "a9ada4245c2eeb04de4d5fa28cc4f214fcfd3ac6d0302a7bae6a8be6a383875c"
+
+      def install
+        bin.install "envsec"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.0/envsec_1.2.0_Linux_arm64.tar.gz"
-      sha256 "a0ce041e407ac1ad2a36e084b5de9e826d15cea4528158c7bcf76bd384d109bd"
-    end
-  end
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Linux_arm64.tar.gz"
+      sha256 "7542f33cdfcc43bf7d3fe86e13d44e02368992d03e7343b8b108f8734d7f83ff"
 
-  def install
-    bin.install "envsec"
+      def install
+        bin.install "envsec"
+      end
+    end
   end
 end
