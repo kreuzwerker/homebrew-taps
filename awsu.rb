@@ -5,28 +5,27 @@
 class Awsu < Formula
   desc "It provides a convenient integration of AWS virtual MFA devices into commandline based workflows."
   homepage "https://github.com/kreuzwerker/awsu"
-  version "2.3.3"
-  bottle :unneeded
-  depends_on :macos
+  version "2.3.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://there-is-no-release-yet-but-to-make-brew-not-fail-on-the-tap.com"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.3/awsu_2.3.3_Darwin_x86_64.tar.gz"
-      sha256 "111c9c6934d4f745a82cf2ed04596487158df8648b28d0089aa99b815177668a"
+      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.5/awsu_2.3.5_Darwin_x86_64.tar.gz"
+      sha256 "c7a5b694bdfe85daefb1ed9dc8e95364bbca576aaafb5510bc9cac44bdd57b41"
+
+      def install
+        bin.install "awsu"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.3/awsu_2.3.3_Linux_x86_64.tar.gz"
-      sha256 "e8cfec1e9bc05a81fe9f15dee15f0b51af97da60c79340bcb1574cee84b63753"
-    end
-  end
+      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.5/awsu_2.3.5_Linux_x86_64.tar.gz"
+      sha256 "ae4b03c0ca404982880e6284058105f3cf9a59faa10ed735afe3275548738c66"
 
-  def install
-    bin.install "awsu"
+      def install
+        bin.install "awsu"
+      end
+    end
   end
 end
