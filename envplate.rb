@@ -5,32 +5,43 @@
 class Envplate < Formula
   desc "Docker-friendly trivial templating for configuration files using environment keys."
   homepage "https://github.com/kreuzwerker/envplate"
-  version "1.0.1"
-  bottle :unneeded
+  version "1.0.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.1/envplate_1.0.1_Darwin_arm64.tar.gz"
-      sha256 "cd850678595eb26584201c46cbbaddd025f9532eabafe298c73d0b48957cfd92"
+      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.2/envplate_1.0.2_Darwin_arm64.tar.gz"
+      sha256 "83fd481a920c4d6093ff04bc4347fa85f2350ab71ad3f870217a07e63ad3dc50"
+
+      def install
+        bin.install "envplate"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.1/envplate_1.0.1_Darwin_x86_64.tar.gz"
-      sha256 "bba41c614b10b841d228c39377989ddca7acc4824bea3783f1a396e995356e94"
+      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.2/envplate_1.0.2_Darwin_x86_64.tar.gz"
+      sha256 "730ce96fbd62c64cb025d9be510def2d619afe83f79fbd063d4374e6010af04e"
+
+      def install
+        bin.install "envplate"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.1/envplate_1.0.1_Linux_arm64.tar.gz"
-      sha256 "2ce7c50e12037a16ddc3fd792c582bb07c44aa6197885d83365af0cc44977e5a"
+      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.2/envplate_1.0.2_Linux_arm64.tar.gz"
+      sha256 "f8718f5982bd3466d19022c1d705a85820b9c1474614e2d0087305797a546bc9"
+
+      def install
+        bin.install "envplate"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.1/envplate_1.0.1_Linux_x86_64.tar.gz"
-      sha256 "29ef4142b76b676b009c6581fc0e7889f88d0846dc59e8a2c079ac6e96535905"
-    end
-  end
+      url "https://github.com/kreuzwerker/envplate/releases/download/v1.0.2/envplate_1.0.2_Linux_x86_64.tar.gz"
+      sha256 "59ad30aac04431848342b559264646bf9c0e5d48829d77e3c357bc60d01f1b1a"
 
-  def install
-    bin.install "envplate"
+      def install
+        bin.install "envplate"
+      end
+    end
   end
 end
