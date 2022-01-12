@@ -5,20 +5,20 @@
 class M1TerraformProviderHelper < Formula
   desc "CLI to support with downloading and compiling terraform providers for Mac with M1 chip."
   homepage "https://github.com/kreuzwerker/m1-terraform-provider-helper"
-  version "0.2.5"
+  version "0.3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.2.5/m1-terraform-provider-helper_0.2.5_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "53f570d451871bda260a81338f392baee19934c81db4e2f1e9b04dfb623d1219"
+    if Hardware::CPU.intel?
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.3.0/m1-terraform-provider-helper_0.3.0_Darwin_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "ff795cf92abe0f7a52d7b0efd23f3bdef0c0dc6e2277d4141e16f269e9491755"
 
       def install
         bin.install "m1-terraform-provider-helper"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.2.5/m1-terraform-provider-helper_0.2.5_Darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "5688b4331b25914b3505324ea8079f232f6071f6064c7a745d89804b488c4b23"
+    if Hardware::CPU.arm?
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.3.0/m1-terraform-provider-helper_0.3.0_Darwin_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "86912dbf40ce114caa3aa4af524ddd86e6ef2c65ec265e9d7e865267b340e06a"
 
       def install
         bin.install "m1-terraform-provider-helper"
@@ -28,16 +28,16 @@ class M1TerraformProviderHelper < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.2.5/m1-terraform-provider-helper_0.2.5_linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "2a786f4b8d3996fb3358c15c27f81177418c58770d68f0bf655768da5c589236"
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.3.0/m1-terraform-provider-helper_0.3.0_linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "2569b871d578d89fb6959ed5ea0b85b7c91f559e878c53cd0ea1af4d87217b54"
 
       def install
         bin.install "m1-terraform-provider-helper"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.2.5/m1-terraform-provider-helper_0.2.5_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "771b3cca53a84e2a096dfb1199d16d992f15fadbb0605e69b8213b1a98f238b1"
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.3.0/m1-terraform-provider-helper_0.3.0_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "2d0a655748a3ff1bfa5f04a0e79c42f1f05c050aedf3063f630d94ce3d80601c"
 
       def install
         bin.install "m1-terraform-provider-helper"
