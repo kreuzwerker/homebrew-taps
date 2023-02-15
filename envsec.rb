@@ -5,20 +5,20 @@
 class Envsec < Formula
   desc "Encrypted environment variables via AWS KMS."
   homepage "https://github.com/kreuzwerker/envsec"
-  version "1.2.1"
+  version "1.2.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Darwin_x86_64.tar.gz"
-      sha256 "f94b942920338ff9d504a84fdd842393115e6a8b802c37c97784bbeac9951359"
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.2/envsec_1.2.2_Darwin_x86_64.tar.gz"
+      sha256 "cf9d26c29fe9dcafb61099831d803effb477da04a0498e77cb7c819a907636b6"
 
       def install
         bin.install "envsec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Darwin_arm64.tar.gz"
-      sha256 "be1397d0db3e2c32162526738b54ad537cb8d4401df45ee52df514b89ba11901"
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.2/envsec_1.2.2_Darwin_arm64.tar.gz"
+      sha256 "1d945627e98497d5f6aa9f374d8f854e38338e447c382cc122ced076749a9bf0"
 
       def install
         bin.install "envsec"
@@ -27,17 +27,17 @@ class Envsec < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Linux_x86_64.tar.gz"
-      sha256 "a9ada4245c2eeb04de4d5fa28cc4f214fcfd3ac6d0302a7bae6a8be6a383875c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.2/envsec_1.2.2_Linux_arm64.tar.gz"
+      sha256 "8bf28d90994790c86709ca3542278441312b9921ab873e51c57a52dbd6e3a5ca"
 
       def install
         bin.install "envsec"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.1/envsec_1.2.1_Linux_arm64.tar.gz"
-      sha256 "7542f33cdfcc43bf7d3fe86e13d44e02368992d03e7343b8b108f8734d7f83ff"
+    if Hardware::CPU.intel?
+      url "https://github.com/kreuzwerker/envsec/releases/download/v1.2.2/envsec_1.2.2_Linux_x86_64.tar.gz"
+      sha256 "793a6800ebd17acccdea27667add53d3754bc46db8e2115e9a439140318577f7"
 
       def install
         bin.install "envsec"
