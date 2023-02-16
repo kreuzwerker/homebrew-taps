@@ -5,12 +5,20 @@
 class Awsu < Formula
   desc "It provides a convenient integration of AWS virtual MFA devices into commandline based workflows."
   homepage "https://github.com/kreuzwerker/awsu"
-  version "2.3.10"
+  version "2.3.11"
 
   on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.11/awsu_Darwin_x86_64.tar.gz"
+      sha256 "4131374dff4bd258760441dad9f1f6183f7ef8d941377722425b01d326db0875"
+
+      def install
+        bin.install "awsu"
+      end
+    end
     if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.10/awsu_2.3.10_Darwin_arm.tar.gz"
-      sha256 "9d82d2dcf8cd8359f54f9d63af79f1e45b2459ce21deb801ca1b5a9a7c7ff582"
+      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.11/awsu_Darwin_arm.tar.gz"
+      sha256 "4131374dff4bd258760441dad9f1f6183f7ef8d941377722425b01d326db0875"
 
       def install
         bin.install "awsu"
@@ -20,8 +28,16 @@ class Awsu < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.10/awsu_2.3.10_Linux_arm.tar.gz"
-      sha256 "5ded5f6b428edf21cbeffb06cbeec8253c3fd4fbd831b6dc613ea516e53f32d7"
+      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.11/awsu_Linux_arm.tar.gz"
+      sha256 "fedeaa28f028fe9220bdc5dc566db8346ccc2d8d527be237049321f2028aaabe"
+
+      def install
+        bin.install "awsu"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/kreuzwerker/awsu/releases/download/v2.3.11/awsu_Linux_x86_64.tar.gz"
+      sha256 "fedeaa28f028fe9220bdc5dc566db8346ccc2d8d527be237049321f2028aaabe"
 
       def install
         bin.install "awsu"
