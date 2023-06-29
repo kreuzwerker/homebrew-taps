@@ -5,22 +5,22 @@
 class M1TerraformProviderHelper < Formula
   desc "CLI to support with downloading and compiling terraform providers for Mac with M1 chip."
   homepage "https://github.com/kreuzwerker/m1-terraform-provider-helper"
-  version "0.8.2"
+  version "0.9.0"
 
   depends_on "go"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.8.2/m1-terraform-provider-helper_0.8.2_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "bb3207827f79c06137cad89cef484c8f3dcb45d211155a390e211414bfe4c5aa"
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.9.0/m1-terraform-provider-helper_0.9.0_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "e98fc5a550709007a30005073b8f55a71aa0002f32a7a875900487e2f149623e"
 
       def install
         bin.install "m1-terraform-provider-helper"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.8.2/m1-terraform-provider-helper_0.8.2_Darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "35042dd31506fefb9115ee2938de425d7c0c322dd910c4ead672d0d9846c6257"
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.9.0/m1-terraform-provider-helper_0.9.0_Darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "4d672784b5d70eea54a0c2c77a5fafc04e27c88092e1d1849f017c0662bb5521"
 
       def install
         bin.install "m1-terraform-provider-helper"
@@ -30,16 +30,16 @@ class M1TerraformProviderHelper < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.8.2/m1-terraform-provider-helper_0.8.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "70114bc5f4f8d7f4f5a881267b8d0d7cd1eac13f81683de1a0f136de3aae37a0"
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.9.0/m1-terraform-provider-helper_0.9.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "8bc4eaca16e4de154ba0cff5b56ab52e1a90ba6eb0d73012580d81b90c848af2"
 
       def install
         bin.install "m1-terraform-provider-helper"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.8.2/m1-terraform-provider-helper_0.8.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "ef9edba33db7bdbd07ce31aec421c42ef248a0341e271003986a2032ea295861"
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.9.0/m1-terraform-provider-helper_0.9.0_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "2fc6b6553f22c7210445202fa7160b78abbcc629df593b7aea77404a8322491d"
 
       def install
         bin.install "m1-terraform-provider-helper"
