@@ -6,6 +6,8 @@ class DockerComposeAT2233 < Formula
   license "Apache-2.0"
   head "https://github.com/docker/compose.git", branch: "main"
 
+  conflicts_with "docker-compose", because: "docker-compose >= v2.24 has issues with our configuration"
+
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
   # necessary to use the `GithubLatest` strategy.
@@ -21,7 +23,7 @@ class DockerComposeAT2233 < Formula
       -s -w
       -X github.com/docker/compose/v2/internal.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"docker-compose"), "./cmd"
   end
 
   def caveats
