@@ -11,7 +11,7 @@ class M1TerraformProviderHelper < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.10.1/m1-terraform-provider-helper_0.10.1_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/v0.10.1/m1-terraform-provider-helper_0.10.1_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
       sha256 "fdee748082df2d566131a8b026befaef6836125672d9b023eaa35f728b3ef7a1"
 
       def install
@@ -19,7 +19,7 @@ class M1TerraformProviderHelper < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.10.1/m1-terraform-provider-helper_0.10.1_Darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/v0.10.1/m1-terraform-provider-helper_0.10.1_Darwin_amd64.tar.gz", using: CurlDownloadStrategy
       sha256 "8c78f17f0c0dcd12d6a86ddc34959b394a11097df093fdb3c754716e9f80741c"
 
       def install
@@ -30,7 +30,7 @@ class M1TerraformProviderHelper < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.10.1/m1-terraform-provider-helper_0.10.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/v0.10.1/m1-terraform-provider-helper_0.10.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
       sha256 "73f15f29a954ea6f67c1218cd013c7aa60591d9397a53a8dc5a1b28ce553e2ec"
 
       def install
@@ -38,7 +38,7 @@ class M1TerraformProviderHelper < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/0.10.1/m1-terraform-provider-helper_0.10.1_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/kreuzwerker/m1-terraform-provider-helper/releases/download/v0.10.1/m1-terraform-provider-helper_0.10.1_linux_arm64.tar.gz", using: CurlDownloadStrategy
       sha256 "4a6c166d4dd5c3f42859c2bc1715557f8c0fa2941849f62c7e406c8823481f36"
 
       def install
